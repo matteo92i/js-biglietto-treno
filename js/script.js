@@ -1,13 +1,22 @@
 var numeroKm = prompt('numero Km')
 var etàPass = prompt('età passeggero')
+var prezzoAlKm = 0.21
 
-document.getElementById('prezzo').innerHTML = numeroKm * 0.21
 
-var etàPass = 65
+var scontoMinorenne = 20
+var scontoMaggiorenne = 40
+
+document.getElementById('prezzo').innerHTML = numeroKm * prezzoAlKm
+
+
 if(etàPass >= 65){
-    document.getElementById('output').innerHTML = numeroKm * 0.126
+    document.getElementById('output').innerHTML = ((numeroKm * prezzoAlKm) * scontoMaggiorenne) /100
+} else if (etàPass <= 17){
+    document.getElementById('output').innerHTML = ((numeroKm * prezzoAlKm) * scontoMinorenne) /100
+    
 }
-var etàPass = 17
-if(etàPass <= 17){
-    document.getElementById('output').innerHTML = numeroKm * 0.168
-}
+
+    
+
+
+
